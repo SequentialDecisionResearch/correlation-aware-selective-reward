@@ -66,3 +66,30 @@ python -m pip install -e ".[figures]"
 python -m unittest discover -s tests -q
 python scripts/reproduce_archived_results.py --verify-only
 python scripts/reproduce_phase6d_archived.py
+
+### Regenerating Archived Outputs
+
+To regenerate outputs from the archived evidence, run:
+
+    python scripts/reproduce_archived_results.py --output reproduced_outputs
+
+For additional details, consult these files inside the reproducibility archive:
+
+- `README.md`
+- `README_REPRODUCE.md`
+- `REVIEWER_VALIDATION.md`
+- `CHECKSUMS.sha256`
+
+## Reproducibility Scope and Limitations
+
+The released materials support verification of archived numerical results, integrity checks, unit tests, and reconstruction of acquisition-risk calculations.
+
+The Phase 6D replay uses saved LoRA-gradient Gram matrices to verify the corresponding risk calculations. It does not rerun the original GPU autograd computations or model-training trajectories.
+
+The original optimizer checkpoints and base-model weights are not included.
+
+Accordingly, archive-based computational verification should not be interpreted as a fresh end-to-end model-training replication.
+
+## Citation
+
+Please cite the accompanying manuscript if you use this work. Formal publication information will be added when available.
