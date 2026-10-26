@@ -66,6 +66,7 @@ python -m pip install -e ".[figures]"
 python -m unittest discover -s tests -q
 python scripts/reproduce_archived_results.py --verify-only
 python scripts/reproduce_phase6d_archived.py
+```
 
 ### Regenerating Archived Outputs
 
